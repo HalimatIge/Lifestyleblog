@@ -1,0 +1,16 @@
+<%- include("../partials/head.html") %> 
+
+
+<form action="/new-post" method="POST" class="text-center" enctype="multipart/form-data" >
+
+    
+        <input  name="picture" type="file" class="m-2 p-2 border rounded outline-none mx-auto" ><br>
+   
+    <input name="title" type="text" class="m-2 p-2 border rounded outline-none mx-auto" placeholder="title">
+   <input name="more" type="text" class="m-2 p-2 border rounded outline-none mx-auto" placeholder="More">
+
+<button class=" btn btn-success" type="submit">Submit</button>
+</form> 
+
+
+<%- include("../partials/bottom.html") %> 

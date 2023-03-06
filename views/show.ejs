@@ -1,0 +1,62 @@
+<%- include("../partials/head.html") %> 
+
+
+<div>
+   <div class="body p-5">
+    <div class="divide w-100 d-flex justify-content-between" style="flex-wrap: wrap;">
+        <% posts.forEach(({title, more, _id,imagePath},index) => { %>
+
+            <div class="square mb-3">
+             <div class="card" style="width:350px; height: 200px">
+         
+                 <img class="card-img-top" src="postImages/<%=imagePath %> "  height="220" alt="Card image"  
+                  alt="" >
+                 <div class="card-body">
+                   <p class="card-text title">
+                    <%= date %> 
+                   </p>
+                   <div class=" justify-content-between">
+                      <p> <%=title %> </p> 
+                
+                   <p> <%=more %></p>
+         
+                   </div>
+         
+                      <div >
+                       <div class="d-flex justify-content-around">
+                         <div>
+                             <form action="/delete/<%=_id%> " method="POST">
+                                 
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-trash text-white bg-red " ></i>
+                                     </button>
+                                 </form>
+                         </div>
+                         <div>
+                           
+                           
+                                 <a href="/editmore/<%=_id%>" class="btn btn-success ">Edit</a>
+                     
+                         </div>
+         
+                         <div>
+                             <form action="/viewmore/<%=_id%> " method="POST">
+                                 <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-eye-slash"></i>
+                                 </button>
+                             </form>
+                         </div>
+                       </div>
+                      </div>
+         
+                 </div>
+               </div>
+            </div>
+                  
+             <% }) %>
+    </div>
+   </div>
+    
+</div>
+
+<%- include("../partials/bottom.html") %> 

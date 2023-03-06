@@ -1,0 +1,16 @@
+<%- include("../partials/head.html") %> 
+
+<div>
+   <form action="/savepost/<%=post._id%> "class="text-center" method="POST">
+
+    <h1>Edit Post Here</h1>
+    <input name="title" type="text"  value=<%=post.title%>  class="m-2 p-2 border rounded outline-none mx-auto"/>
+    <input name="more"  type="text"  value=<%=post.more%>   class="m-2 p-2 border rounded outline-none mx-auto"/>
+
+    <button class="btn btn-success" type="submit">Save Changes</button>
+    
+   </form> 
+</div>
+
+
+<%- include("../partials/bottom.html") %> 
